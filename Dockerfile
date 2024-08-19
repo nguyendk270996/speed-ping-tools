@@ -13,6 +13,7 @@ else \
 fi
 RUN cp ./speedtest /bin/speedtest 
 COPY network-tools.py .
-RUN speedtest --accept-license
+RUN speedtest --accept-license & 
+RUN sleep 5
 CMD [ "python3", "network-tools.py" ]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
