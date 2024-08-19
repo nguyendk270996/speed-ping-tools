@@ -19,7 +19,7 @@ jobs:
         docker build -t nkhoidang/speed-ping-tools:latest --build-arg TARGET=linux-x86_64 .
         docker push nkhoidang/speed-ping-tools:latest
   build-arm:
-    runs-on: macos-latest
+    runs-on: arm
     steps:
     - uses: actions/checkout@v4
     - name: Login to Docker Hub
