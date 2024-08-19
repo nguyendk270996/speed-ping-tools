@@ -29,6 +29,6 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push
       run: |
-        docker build -t nkhoidang/speed-ping-tools:latest --build-arg TARGET=linux-aarch64 .
+        docker build -t nkhoidang/speed-ping-tools:latest-arm64 --build-arg TARGET=linux-aarch64 .
         docker push nkhoidang/speed-ping-tools:latest-arm64
 
