@@ -1,6 +1,5 @@
 FROM ubuntu
 ARG TARGET-PLF=linux-x86_64
-ENV TARGET-PLF=$TARGET-PLF
 #Install softwares
 RUN apt-get update -y
 RUN apt-get install -y vim net-tools iputils-ping python3 jq curl && \
