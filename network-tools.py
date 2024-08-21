@@ -8,7 +8,7 @@ import sys
 def get_ping_stats(host):  
         try:
             result = 0
-            for i in range(5):
+            for _ in range(5):
                 command = f"ping -c 1 {host}"
                 output = subprocess.check_output(command, shell=True)
                 output = output.decode("utf-8")
@@ -17,8 +17,7 @@ def get_ping_stats(host):
                 min_rtt, avg_rtt, max_rtt, mdev_rtt = [float(x.strip()) for x in rtt_values]        
                 result += max_rtt
             return float("{:.2f}".format(result/5 + result%5)) 
-            #return f"{result/5 + result%5}"
-        except:
+        except BaseException:
             return -1
 
 
