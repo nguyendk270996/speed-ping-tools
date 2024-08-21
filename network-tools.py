@@ -19,7 +19,8 @@ def get_ping_stats(host):
             return float("{:.2f}".format(result/5 + result%5)) 
         except BaseException:
             return -1
-
+        except FileNotFoundError:
+            return -1
 
 def speedtest (server_id=""):
     command = f"speedtest --accept-license -f json -u Mbps" 
